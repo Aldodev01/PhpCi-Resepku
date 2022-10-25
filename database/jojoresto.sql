@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 25, 2022 at 07:51 AM
+-- Generation Time: Oct 25, 2022 at 09:42 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -52,6 +52,7 @@ INSERT INTO `food_type` (`id`, `tipe`) VALUES
 CREATE TABLE `resep` (
   `id` int(11) NOT NULL,
   `image` varchar(256) CHARACTER SET latin1 DEFAULT NULL,
+  `type_id` int(11) NOT NULL,
   `nama_resep` varchar(64) CHARACTER SET latin1 NOT NULL,
   `deskripsi` varchar(756) CHARACTER SET latin1 NOT NULL,
   `bahan` varchar(756) CHARACTER SET latin1 NOT NULL,
@@ -63,8 +64,8 @@ CREATE TABLE `resep` (
 -- Dumping data for table `resep`
 --
 
-INSERT INTO `resep` (`id`, `image`, `nama_resep`, `deskripsi`, `bahan`, `langkah_masak`, `link`) VALUES
-(1, 'french-toast.jpg', 'French Toast', 'French Toast adalah roti panggang perancis yang dilapisi dengan telur, susu, krim kental dan bahan lainnya, kemudian dipanggang sampai garing. Rasanya manis, gurih, bertekstur garing dengan aroma yang harum. Cara membuat  terbilang mudah karena hanya butuh alat berupa teflon.\r\nBerikut resep French Toast dari Resto untuk hidangan sarapan praktis, mewah, dan enak', '- 5 lembar roti tawar tebal tanpa kulit\r\n- 2 butir telur\r\n- 1/4 sendok teh garam\r\n- 1/2 sendok makan gula pasir\r\n- 75 ml susu cair\r\n- 75 ml krim kental\r\n- 125 gram mentega\r\n- maple syrup sesuai selera', '1. Campur bahan pencelup, kocok telur, garam, dan gula pasir. Tambahkan susu cair dan krim kental sambil diaduk rata.\r\n2. Celupkan roti ke bahan pencampur. Panggang dengan wajan yang sudah dioleskan mentega. Balik sisinya agar matang sampai coklat keemasan.\r\n3. Hidangkan dengan olesan mentega dan sirup maple', '');
+INSERT INTO `resep` (`id`, `image`, `type_id`, `nama_resep`, `deskripsi`, `bahan`, `langkah_masak`, `link`) VALUES
+(1, 'french-toast.jpg', 1, 'French Toast', 'French Toast adalah roti panggang perancis yang dilapisi dengan telur, susu, krim kental dan bahan lainnya, kemudian dipanggang sampai garing. Rasanya manis, gurih, bertekstur garing dengan aroma yang harum. Cara membuat  terbilang mudah karena hanya butuh alat berupa teflon.\r\nBerikut resep French Toast dari Resto untuk hidangan sarapan praktis, mewah, dan enak', '- 5 lembar roti tawar tebal tanpa kulit\r\n- 2 butir telur\r\n- 1/4 sendok teh garam\r\n- 1/2 sendok makan gula pasir\r\n- 75 ml susu cair\r\n- 75 ml krim kental\r\n- 125 gram mentega\r\n- maple syrup sesuai selera', '1. Campur bahan pencelup, kocok telur, garam, dan gula pasir. Tambahkan susu cair dan krim kental sambil diaduk rata.\r\n2. Celupkan roti ke bahan pencampur. Panggang dengan wajan yang sudah dioleskan mentega. Balik sisinya agar matang sampai coklat keemasan.\r\n3. Hidangkan dengan olesan mentega dan sirup maple', '');
 
 -- --------------------------------------------------------
 
